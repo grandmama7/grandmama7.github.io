@@ -1,7 +1,181 @@
 <!doctype html>
-<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>할머니네 일곱 밤</title></head>
-<body style="font-family:sans-serif;max-width:640px;margin:40px auto;padding:0 16px;line-height:1.6">
-<h1>할머니네 일곱 밤</h1>
-<p>할머니 댁에서 보내는 일곱 밤 이야기.</p>
-<p><a href="https://play.google.com/store/apps/details?id=com.grandma.sevennights">Google Play</a> · <a href="https://claude.ai/artifact/NcZ3W9oA5ho67uAG4LswmH">개인정보처리방침</a></p>
-</body></html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>할머니네 일곱 밤</title>
+<meta name="description" content="할머니 손에 자란 시골 소녀 소이가 서울에서 어른이 되어 가는 이야기. 요리, 집안일, 여러 직업 미니게임.">
+<meta property="og:title" content="할머니네 일곱 밤">
+<meta property="og:description" content="밥은 꼭 챙겨 먹어라, 우리 강아지. 할머니 손에 자란 시골 소녀의 서울살이">
+<meta property="og:image" content="https://grandmama7.github.io/hero.jpg">
+<meta name="theme-color" content="#3a2a4a">
+<link rel="icon" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Gowun+Dodum&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#3b2a24; --soft:#7a6157; --paper:#fbf4ea; --paper2:#f4e6d3; --line:#e6d2bb;
+  --persimmon:#e2722f; --persimmon-d:#c25a1c; --night:#2e2240; --night2:#4a3560; --gold:#f2c46d;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Gowun Dodum",system-ui,sans-serif;line-height:1.75;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+
+/* 머리 */
+.hero{position:relative;background:linear-gradient(180deg,var(--night) 0%,var(--night2) 55%,#8a4a52 100%);color:#fff;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(2px 2px at 12% 18%,#fff8 50%,transparent 51%),radial-gradient(1.5px 1.5px at 30% 8%,#fff9 50%,transparent 51%),
+  radial-gradient(2px 2px at 64% 14%,#fff7 50%,transparent 51%),radial-gradient(1.5px 1.5px at 82% 6%,#fffa 50%,transparent 51%),
+  radial-gradient(1.5px 1.5px at 92% 24%,#fff6 50%,transparent 51%),radial-gradient(2px 2px at 48% 4%,#fff8 50%,transparent 51%);pointer-events:none}
+.top{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+.brand{display:flex;align-items:center;gap:10px;font-family:"Gowun Batang",serif;font-weight:700;font-size:18px;text-decoration:none}
+.brand img{width:36px;height:36px;border-radius:10px;box-shadow:0 2px 8px #0005}
+.top nav a{margin-left:18px;font-size:15px;opacity:.85;text-decoration:none}
+.top nav a:hover{opacity:1}
+.hero-art{position:relative;margin:8px auto 0;max-width:1024px;border-radius:22px;overflow:hidden;box-shadow:0 20px 50px #0007}
+.hero-copy{text-align:center;padding:32px 0 36px}
+.quote{font-family:"Gowun Batang",serif;font-size:clamp(20px,3.4vw,28px);margin:0 0 10px;color:var(--gold)}
+.sub{margin:0 0 28px;opacity:.9;font-size:clamp(15px,2.2vw,18px)}
+.play{display:inline-flex;align-items:center;gap:12px;background:#111;color:#fff;text-decoration:none;padding:12px 22px 12px 18px;border-radius:14px;border:1px solid #fff3;transition:transform .15s}
+.play:hover{transform:translateY(-2px)}
+.play svg{width:26px;height:26px}
+.play small{display:block;font-size:11px;opacity:.75;line-height:1.2}
+.play b{display:block;font-size:18px;line-height:1.2}
+.wave{display:block;width:100%;height:60px;margin-top:-1px}
+
+/* 이야기 */
+section{padding:72px 0}
+h2{font-family:"Gowun Batang",serif;font-size:clamp(24px,3.6vw,32px);margin:0 0 10px;text-align:center}
+.lead{text-align:center;color:var(--soft);margin:0 auto 40px;max-width:560px}
+.story{display:grid;grid-template-columns:260px 1fr;gap:40px;align-items:center}
+.story img{border-radius:50%;box-shadow:0 0 0 8px #fff,0 0 0 9px var(--line),0 14px 30px #c25a1c33}
+.story h2.left{text-align:left}
+.story p{margin:0 0 14px;font-size:17px}
+.story .hl{font-family:"Gowun Batang",serif;color:var(--persimmon-d);font-size:19px}
+
+/* 즐길 거리 */
+.alt{background:var(--paper2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.card{background:#fffaf3;border:1px solid var(--line);border-radius:18px;padding:22px 20px;box-shadow:0 6px 16px #a0704010}
+.card .em{font-size:30px;line-height:1}
+.card h3{font-family:"Gowun Batang",serif;margin:10px 0 6px;font-size:19px}
+.card p{margin:0;color:var(--soft);font-size:15px}
+
+/* 장면 */
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.shot{margin:0;background:#fff;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 8px 20px #6b3d1f14}
+.shot img{aspect-ratio:16/9;object-fit:cover;width:100%;transition:transform .4s}
+.shot:hover img{transform:scale(1.03)}
+.shot figcaption{padding:10px 16px;font-size:15px;color:var(--soft)}
+
+/* 마무리 */
+.end{background:linear-gradient(180deg,var(--paper) 0%,#f6dcc4 100%);text-align:center}
+.end .play{background:var(--night)}
+.note{margin:26px auto 0;font-size:13px;color:var(--soft);max-width:520px}
+footer{background:var(--night);color:#e9dff2;font-size:14px;padding:28px 0;text-align:center}
+footer a{color:var(--gold);text-decoration:none;margin:0 8px}
+footer p{margin:6px 0}
+
+@media (max-width:860px){
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .story{grid-template-columns:1fr;text-align:center;gap:24px}
+  .story img{width:200px;margin:0 auto}
+  .story h2.left{text-align:center}
+}
+@media (max-width:560px){
+  .wrap{padding:0 16px}
+  .top nav{display:none}
+  .hero-art{border-radius:14px}
+  .cards,.gallery{grid-template-columns:1fr}
+  section{padding:56px 0}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="top">
+      <a class="brand" href="#"><img src="icon.jpg" alt="">할머니네 일곱 밤</a>
+      <nav><a href="#story">이야기</a><a href="#play">즐길 거리</a><a href="#scenes">장면</a></nav>
+    </div>
+    <div class="hero-art"><img src="hero.jpg" width="1024" height="500" alt="툇마루에서 밤을 까는 할머니와 어린 소이, 그리고 서울 야경 앞의 어른 소이"></div>
+    <div class="hero-copy">
+      <p class="sub">할머니 댁에서 보낸 일곱 밤, 그 마음을 안고 서울에서 어른이 되어 가는 이야기</p>
+      <a class="play" href="https://play.google.com/store/apps/details?id=com.grandma.sevennights">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#34a853" d="M3.6 1.8 13.4 12 3.6 22.2c-.4-.2-.6-.7-.6-1.2V3c0-.5.2-1 .6-1.2z"/><path fill="#fbbc04" d="m16.8 8.6-3.4 3.4 3.4 3.4 3.9-2.2c.8-.5.8-1.7 0-2.2z"/><path fill="#4285f4" d="M3.6 1.8c.3-.2.8-.2 1.2 0l12 6.8-3.4 3.4z"/><path fill="#ea4335" d="M13.4 12l3.4 3.4-12 6.8c-.4.2-.9.2-1.2 0z"/></svg>
+        <span><small>다운로드</small><b>Google Play</b></span>
+      </a>
+    </div>
+  </div>
+  <svg class="wave" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path fill="#fbf4ea" d="M0 30c240 30 480 30 720 10S1200 0 1440 30v30H0z"/></svg>
+</header>
+
+<main>
+  <section id="story">
+    <div class="wrap story">
+      <img src="icon.jpg" width="256" height="256" alt="소이를 꼭 안아 주는 할머니">
+      <div>
+        <h2 class="left">감나무 아래, 할머니네</h2>
+        <p>소이에게는 엄마, 아빠가 없었어요. 대신 감나무 아래 툇마루에서 밤을 까 주던 할머니가 있었죠.</p>
+        <p>된장 냄새 나는 부엌, 꼬꼬가 우는 마당, “오늘은 뭐 하고 놀았노” 하고 묻던 목소리.</p>
+        <p>그리고 소이는 어른이 되어 서울로 떠납니다. 반지하 단칸방에서 시작하는 서툰 하루하루.</p>
+        <p class="hl">힘들 때마다 할머니가 싸 준 마음을 꺼내 보면서요.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="play" class="alt">
+    <div class="wrap">
+      <h2>이런 걸 할 수 있어요</h2>
+      <p class="lead">시골에서 보낸 일곱 밤부터 서울에서의 서른 살까지</p>
+      <div class="cards">
+        <div class="card"><div class="em">🌾</div><h3>할머니와 시골살이</h3><p>텃밭 가꾸기, 김장하기, 할머니와 요리하기, 정 많은 마을 사람들</p></div>
+        <div class="card"><div class="em">🏙️</div><h3>서울에서 어른 되기</h3><p>바리스타, 헤어디자이너, 의상디자이너, 파티시에… 직접 해 보는 직업 체험</p></div>
+        <div class="card"><div class="em">💌</div><h3>서른 살의 소이</h3><p>서울에서 만나는 인연, 설레는 데이트, 그리고 결혼</p></div>
+        <div class="card"><div class="em">👗</div><h3>나만의 소이 꾸미기</h3><p>계절과 분위기에 맞춘 코디, 아늑한 방 꾸미기</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="scenes">
+    <div class="wrap">
+      <h2>게임 속 장면</h2>
+      <p class="lead">손으로 그린 듯한 따뜻한 그림 속에서</p>
+      <div class="gallery">
+        <figure class="shot"><img src="s3.jpg" loading="lazy" width="960" height="540" alt="김장 양념 바르기"><figcaption>할머니와 김장 양념 바르기</figcaption></figure>
+        <figure class="shot"><img src="s1.jpg" loading="lazy" width="960" height="540" alt="아틀리에의 마네킹"><figcaption>아틀리에에서 손님 옷 짓기</figcaption></figure>
+        <figure class="shot"><img src="s4.jpg" loading="lazy" width="960" height="540" alt="헤어샵"><figcaption>헤어디자이너가 되어 머리 자르기</figcaption></figure>
+        <figure class="shot"><img src="s5.jpg" loading="lazy" width="960" height="540" alt="케이크 만들기"><figcaption>파티시에의 주문 케이크</figcaption></figure>
+        <figure class="shot"><img src="s6.jpg" loading="lazy" width="960" height="540" alt="라떼 아트 데이트"><figcaption>설레는 라떼 아트 대결</figcaption></figure>
+        <figure class="shot"><img src="s8.jpg" loading="lazy" width="960" height="540" alt="방 꾸미기"><figcaption>나만의 방 꾸미기</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="end">
+    <div class="wrap">
+      <h2>오늘 밤, 할머니네 놀러 올래?</h2>
+      <p class="lead" style="margin-bottom:28px">무료로 시작할 수 있어요</p>
+      <a class="play" href="https://play.google.com/store/apps/details?id=com.grandma.sevennights">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#34a853" d="M3.6 1.8 13.4 12 3.6 22.2c-.4-.2-.6-.7-.6-1.2V3c0-.5.2-1 .6-1.2z"/><path fill="#fbbc04" d="m16.8 8.6-3.4 3.4 3.4 3.4 3.9-2.2c.8-.5.8-1.7 0-2.2z"/><path fill="#4285f4" d="M3.6 1.8c.3-.2.8-.2 1.2 0l12 6.8-3.4 3.4z"/><path fill="#ea4335" d="M13.4 12l3.4 3.4-12 6.8c-.4.2-.9.2-1.2 0z"/></svg>
+        <span><small>다운로드</small><b>Google Play</b></span>
+      </a>
+      <p class="note">게임은 무료이며, 일부 유료 아이템(무작위 아이템 포함)과 광고가 있습니다.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><a href="https://claude.ai/artifact/NcZ3W9oA5ho67uAG4LswmH">개인정보처리방침</a>·<a href="https://play.google.com/store/apps/details?id=com.grandma.sevennights">Google Play</a></p>
+    <p>© 2026 할머니네 일곱 밤</p>
+  </div>
+</footer>
+
+</body>
+</html>
